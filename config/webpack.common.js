@@ -19,7 +19,9 @@ const METADATA = {
 const config = {
   metadata:       METADATA,
   entry:          {
-    main: [ './main.ts' ]
+    main:      [ './app/main.browser.ts' ],
+    polyfills: [ './app/polyfills.browser.ts' ],
+    vendor:    [ './app/vendors.browser.ts' ]
   },
   output: {
     path:       './bin',
@@ -31,9 +33,19 @@ const config = {
     extensions:         [ '', '.js', '.ts' ],
     modulesDirectories: [ 'node_modules' ]
   },
+  preLoaders: [
+    {
+      test:    /\.js$/,
+      loader:  'source-map-loader',
+      exclude: [
+        'node_modules/rxjs',
+        'node_modules/@angular'
+      ]
+    }
+  ],
   module: {
     loaders: [
-      { test: /\.tsx?$/, loader: 'ts' },
+      { test: /\.tsx?$/, loaders: [ 'ts' ], exclude: [ /\.(spec|e2e)\.ts$/ ] },
       { test: /\.(sass|scss)$/, exclude: /(node_modules)/, loaders: [ 'style', 'postcss', 'sass?sourceMap' ] },
       { test: /\.(png|jpg|jpeg)$/, loader: 'file?name=[name].[ext]' },
       { test: /\.html$/, loader: 'html' }
@@ -57,6 +69,9 @@ const config = {
       template:       './index.ejs',
       filename:       'index.html',
       chunksSortMode: 'dependency'
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: [ 'polyfills', 'vendor' ].reverse()
     }),
     new webpack.EnvironmentPlugin([
       'NODE_ENV'

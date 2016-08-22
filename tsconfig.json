@@ -1,13 +1,16 @@
 {
   "compilerOptions": {
-    "preserveConstEnums": true,
-    "removeComments": true,
+    "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "mapRoot": "./",
     "module": "commonjs",
     "moduleResolution": "node",
-    "noImplicitAny": true,
+    "noEmitOnError": true,
+    "noImplicitAny": false,
     "outDir": "bin",
+    "preserveConstEnums": true,
+    "removeComments": true,
     "rootDir": ".",
     "sourceMap": true,
     "target": "es5"
@@ -15,9 +18,14 @@
   "exclude": [
     "bin",
     "config",
-    "node_modules",
-    "typings"
+    "node_modules"
   ],
   "compileOnSave": false,
-  "buildOnSave": false
+  "buildOnSave": false,
+  "typeRoots": [
+    "../node_modules/@types"
+  ]
+  // "types": [
+  //   "core-js"
+  // ]
 }
