@@ -20,7 +20,7 @@ module.exports = merge(common, {
   debug:    true,
   devtool:  'cheap-module-source-map',
   output:   {
-    path:              path.resolve('${__dirname}/../dist'),
+    path:              path.resolve('${__dirname}/../bin'),
     filename:          '[name].bundle.js',
     sourceMapFilename: '[name].map',
     chunkFilename:     '[id].chunk.js',

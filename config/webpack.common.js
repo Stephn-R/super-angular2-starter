@@ -33,6 +33,7 @@ const config = {
   },
   module: {
     loaders: [
+      { test: /\.tsx?$/, loader: 'ts' },
       { test: /\.(sass|scss)$/, exclude: /(node_modules)/, loaders: [ 'style', 'postcss', 'sass?sourceMap' ] },
       { test: /\.(png|jpg|jpeg)$/, loader: 'file?name=[name].[ext]' },
       { test: /\.html$/, loader: 'html' }

@@ -19,7 +19,7 @@ const WebpackNotifierPlugin = require('webpack-notifier');
 module.exports = merge(common, {
   debug:   false,
   output:  {
-    path:              path.resolve('${__dirname}/../dist'),
+    path:              path.resolve('${__dirname}/../bin'),
     filename:          '[name].[chunkhash].bundle.js',
     sourceMapFilename: '[name].[chunkhash].bundle.map',
     chunkFilename:     '[id].[chunkhash].chunk.js',
