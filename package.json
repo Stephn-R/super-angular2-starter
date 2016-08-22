@@ -1,0 +1,50 @@
+{
+  "name": "super-angular2-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.ts",
+  "scripts": {
+    "lint": "eslint ./",
+    "scan": "nsp check",
+    "prebuild": "rimraf ./dist",
+    "build": "webpack --progress --profile --colors --display-error-details",
+    "build:dev": "export NODE_ENV=dev && npm run build",
+    "build:prod": "export NODE_ENV=prod && npm run build",
+    "prestart": "npm run build",
+    "preserver": "npm run prebuild",
+    "preprod": "npm run build:prod",
+    "start": "http-server ./dist",
+    "server": "webpack-dev-server --config ./config/webpack.server.js --content-base ./dist --progress --profile --colors --display-error-details --port 5555",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stephn-R/super-angular2-starter.git"
+  },
+  "author": "Stephen Rodriguez <steprodriguez10@gmail.com> (http://www.stephenrodriguez.info/)",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/Stephn-R/super-angular2-starter/issues"
+  },
+  "homepage": "https://github.com/Stephn-R/super-angular2-starter#readme",
+  "dependencies": {
+    "autoprefixer": "6.4.0",
+    "css-loader": "0.23.1",
+    "ejs": "2.5.1",
+    "eslint": "3.3.1",
+    "file-loader": "0.9.0",
+    "html-loader": "0.4.3",
+    "html-webpack-plugin": "2.22.0",
+    "http-server": "0.9.0",
+    "postcss-loader": "0.10.1",
+    "rimraf": "2.5.4",
+    "sass-loader": "4.0.0",
+    "style-loader": "0.13.1",
+    "webpack": "1.13.2",
+    "webpack-dashboard": "0.1.7",
+    "webpack-dev-server": "1.15.0",
+    "webpack-md5-hash": "0.0.5",
+    "webpack-merge": "0.14.1",
+    "webpack-notifier": "1.4.0"
+  }
+}
