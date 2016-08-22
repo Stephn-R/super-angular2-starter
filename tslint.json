@@ -6,10 +6,6 @@
       "check-lowercase"
     ],
     "component-class-suffix": true,
-    "component-selector-name": [
-      "camelCase",
-      true
-    ],
     "curly": true,
     "eofline": true,
     "forin": true,
@@ -60,9 +56,6 @@
       true
     ],
     "use-strict": [
-      true
-    ],
-    "variable-name": [
       true
     ]
   }
