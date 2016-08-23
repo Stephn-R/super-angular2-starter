@@ -1,4 +1,15 @@
+/*===============================
+=            MODULES            =
+===============================*/
+
 import { Component } from '@angular/core';
+
+/*=====  End of MODULES  ======*/
+
+
+/*======================================
+=            HOME COMPONENT            =
+======================================*/
 
 @Component({
   selector: 'home',
@@ -10,3 +21,5 @@ export class HomeComponent {
     // stub
   }
 }
+
+/*=====  End of HOME COMPONENT  ======*/

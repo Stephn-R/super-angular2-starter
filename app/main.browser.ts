@@ -1,6 +1,14 @@
 ///<reference path="../typings/index.d.ts"/>
+
+/*===============================
+=            MODULES            =
+===============================*/
+
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app.module';
+
+/*=====  End of MODULES  ======*/
+
 
 /*
  * Bootstrap our Angular app with a top level NgModule

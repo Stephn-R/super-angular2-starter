@@ -1,4 +1,15 @@
+/*===============================
+=            MODULES            =
+===============================*/
+
 import { Component } from '@angular/core';
+
+/*=====  End of MODULES  ======*/
+
+
+/*=====================================
+=            APP COMPONENT            =
+=====================================*/
 
 @Component({
   selector: 'app',
@@ -12,3 +23,5 @@ export class AppComponent {
     // stub
   }
 }
+
+/*=====  End of APP COMPONENT  ======*/

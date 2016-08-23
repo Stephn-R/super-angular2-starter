@@ -1,9 +1,20 @@
+/*===============================
+=            MODULES            =
+===============================*/
+
 import { NgModule }       from '@angular/core';
 import { BrowserModule  } from '@angular/platform-browser';
 
 import { AppComponent }   from './app.component';
 import { HomeComponent }   from './home';
 import { RoutingModule, RoutingProviders } from './app.routing';
+
+/*=====  End of MODULES  ======*/
+
+
+/*==================================
+=            APP MODULE            =
+==================================*/
 
 @NgModule({
     bootstrap:    [AppComponent],
@@ -20,3 +31,6 @@ import { RoutingModule, RoutingProviders } from './app.routing';
     ]
 })
 export class AppModule {}
+
+/*=====  End of APP MODULE  ======*/
+
