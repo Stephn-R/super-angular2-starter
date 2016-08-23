@@ -30,7 +30,7 @@ const config = {
   },
   resolve: {
     root:               '.',
-    extensions:         [ '', '.js', '.ts' ],
+    extensions:         [ '', '.js', '.ts', '.scss' ],
     modulesDirectories: [ 'node_modules' ]
   },
   preLoaders: [
@@ -46,7 +46,7 @@ const config = {
   module: {
     loaders: [
       { test: /\.tsx?$/, loaders: [ 'ts' ], exclude: [ /\.(spec|e2e)\.ts$/ ] },
-      { test: /\.(sass|scss)$/, exclude: /(node_modules)/, loaders: [ 'style', 'postcss', 'sass?sourceMap' ] },
+      { test: /\.(sass|scss)$/, exclude: /(node_modules)/, loaders: [ 'raw', 'sass?sourceMap' ] },
       { test: /\.(png|jpg|jpeg)$/, loader: 'file?name=[name].[ext]' },
       { test: /\.html$/, loader: 'html' }
     ]
