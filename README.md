@@ -2,22 +2,24 @@
 
 ![](https://codeclimate.com/github/Stephn-R/super-angular2-starter/badges/gpa.svg)
 
-### Components Checklist:
+Please refer to the [CONTRIBUTING.md](https://github.com/stephn-r/super-angular2-starter/blob/master/CONTRIBUTING.md) doc for any questions, concerns, or suggestions
 
-This starter project provides the following capabilities:
+#### Getting Started for development
 
-- Webpack Hot Module Loading
-- Webpack Dashboard
-- Angular 2 (w/o SystemJS)
-- Styles injection using Sass + Webpack
-- HTML file injection using Webpack
-- Angular 2 routing
-- Polyfills/Vendors Support
-- IE9 Support
-- Multiple Dotfiles
-- Linting (ESLint/TSLint)
+1. Install Modules
 
-#### WIP
+```sh
+npm install
+```
 
-- Angular2 Testing Suite
-- GraphQL Server
+2. Run the app in development mode
+
+```sh
+npm run server
+```
+
+3. Run the app in production mode
+
+```sh
+npm start
+```
