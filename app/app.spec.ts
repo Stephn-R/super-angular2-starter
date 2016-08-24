@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { AppState } from './app.service';
 
 describe('AppComponent', () => {
+
   /*=================================
   =            MOCK INIT            =
   =================================*/
@@ -21,6 +22,7 @@ describe('AppComponent', () => {
 
 
   it('should have a url', inject([ AppComponent ], (app) => {
+    console.log(app);
     expect(app.url).toEqual('https://twitter.com/AngularClass');
   }));
 
