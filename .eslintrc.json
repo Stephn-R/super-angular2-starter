@@ -34,7 +34,7 @@
     "jasmine": true,
     "jest": false,
     "phantomjs": false,
-    "protractor": false,
+    "protractor": true,
     "qunit": false,
     "jquery": false,
     "prototypejs": false,
@@ -49,7 +49,7 @@
   },
 
   "globals": {
-
+    "browser": true
   },
 
   "plugins": [],
