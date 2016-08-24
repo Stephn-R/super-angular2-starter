@@ -19,9 +19,9 @@ const METADATA = {
 const config = {
   metadata:       METADATA,
   entry:          {
-    main:      [ './app/main.browser.ts' ],
-    polyfills: [ './app/polyfills.browser.ts' ],
-    vendor:    [ './app/vendors.browser.ts' ]
+    main:      [ './src/app/main.browser.ts' ],
+    polyfills: [ './src/app/polyfills.browser.ts' ],
+    vendor:    [ './src/app/vendors.browser.ts' ]
   },
   output: {
     path:       './bin',

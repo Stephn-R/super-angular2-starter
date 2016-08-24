@@ -16,7 +16,6 @@
     "preprod": "npm run build:prod",
     "start": "http-server ./bin",
     "server": "webpack-dev-server --config ./config/webpack.server.js --content-base ./bin --progress --profile --colors --display-error-details --port 5555",
-    "pretest": "tsc",
     "test": "karma start",
     "e2e": "protractor"
   },
