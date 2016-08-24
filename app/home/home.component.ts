@@ -2,7 +2,7 @@
 =            MODULES            =
 ===============================*/
 
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 /*=====  End of MODULES  ======*/
 
@@ -12,6 +12,7 @@ import { Component } from '@angular/core';
 ======================================*/
 
 @Component({
+  encapsulation: ViewEncapsulation.Native,
   selector: 'home',
   styles:   [ require('./home.styles.scss') ],
   template: require('./home.template.html')

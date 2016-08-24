@@ -2,7 +2,7 @@
 =            MODULES            =
 ===============================*/
 
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 /*=====  End of MODULES  ======*/
 
@@ -12,6 +12,8 @@ import { Component } from '@angular/core';
 =====================================*/
 
 @Component({
+  // Use Shadow DOM encapsulation
+  encapsulation: ViewEncapsulation.Native,
   selector: 'app',
   template: `
     <h1>Welcome to Super Angular 2 Webpack Starter</h1>
