@@ -11,8 +11,16 @@ import { AppState } from './app.service';
 import { HomeComponent }   from './home';
 import { RoutingModule, RoutingProviders } from './app.routing';
 
+import { ApolloModule, defaultApolloClient } from 'angular2-apollo';
+import ApolloClient, { createNetworkInterface } from 'apollo-client';
+
+import config from './app.config';
+
 /*=====  End of MODULES  ======*/
 
+const client = new ApolloClient({
+  networkInterface: createNetworkInterface(config.API_URL)
+});
 
 /*==================================
 =            APP MODULE            =
@@ -23,7 +31,7 @@ import { RoutingModule, RoutingProviders } from './app.routing';
     =            BOOTSTRAP            =
     =================================*/
 
-    bootstrap:    [
+    bootstrap: [
       AppComponent
     ],
 
@@ -42,10 +50,11 @@ import { RoutingModule, RoutingProviders } from './app.routing';
     =            IMPORTS            =
     ===============================*/
 
-    imports:      [
+    imports: [
       BrowserModule,
       HttpModule,
-      RoutingModule
+      RoutingModule,
+      ApolloModule.withClient(client)
     ],
 
     /*=====  End of IMPORTS  ======*/

@@ -3,8 +3,13 @@
 ===============================*/
 
 import { Component, ViewEncapsulation } from '@angular/core';
+import { Angular2Apollo } from 'angular2-apollo';
+
+import { getUser } from './graphs';
 
 /*=====  End of MODULES  ======*/
+
+console.log(getUser);
 
 
 /*=====================================
@@ -17,12 +22,20 @@ import { Component, ViewEncapsulation } from '@angular/core';
   selector: 'app',
   template: `
     <h1>Welcome to Super Angular 2 Webpack Starter</h1>
+    <h2>{{ message }}</h2>
     <router-outlet></router-outlet>
   `
 })
 export class AppComponent {
-  constructor() {
-    // stub
+  message: String;
+
+  constructor(private angularApollo : Angular2Apollo) {
+    this.message = 'Loading message from server...';
+
+    angularApollo.query(getUser('5cdc57cd-14f3-44f2-b590-39de935fcd7e'))
+    .then(({ data }) => {
+      this.message = `Hello, ${data.user.firstName} ${data.user.lastName}!`;
+    });
   }
 }
 
