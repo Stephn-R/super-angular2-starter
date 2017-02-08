@@ -1,36 +1,23 @@
 // ────────────────────────────────────────────────────────────────────────────────
 // MODULES
 
-import { NgModule }       from '@angular/core';
-import { BrowserModule  } from '@angular/platform-browser';
+const path = require('path');
+const merge = require('webpack-merge');
+const webpack = require('webpack');
+const WebpackNotifierPlugin = require('webpack-notifier');
 
-import { AppComponent }   from './app.component';
-import { RoutingModule, RoutingProviders } from './app.routing';
+const common = require('./common');
 
 // ────────────────────────────────────────────────────────────────────────────────
-// APP MODULE
 
-@NgModule({
-  bootstrap: [
-    AppComponent
+module.exports = merge(common, {
+  devtool: 'cheap-module-eval-source-map',
+  plugins: [
+    new webpack.NamedModulesPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
+    new WebpackNotifierPlugin({
+      title: 'Webpack Bundler',
+      alwaysNotify: true,
+    }),
   ],
-
-  declarations: [
-    AppComponent
-  ],
-
-  imports: [
-    BrowserModule,
-    RoutingModule
-  ],
-
-  providers: [
-    RoutingProviders
-  ]
-})
-export class AppModule {
-  constructor() {}
-}
-
-/*=====  End of APP MODULE  ======*/
-
+});

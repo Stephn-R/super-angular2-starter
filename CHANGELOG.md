@@ -1,3 +1,7 @@
+# 2.0.0
+
+- updating application dependencies and move to TS 2.0+
+
 # 1.0.0
 
 Official first release of the Super Angular2 Starter

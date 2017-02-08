@@ -5,15 +5,15 @@ const ENV = process.env.NODE_ENV;
 switch(ENV) {
 case 'dev':
 case 'development':
-  module.exports = require('./config/webpack.dev');
+  module.exports = require('./webpack/development');
   break;
 
 case 'prod':
 case 'production':
-  module.exports = require('./config/webpack.prod');
+  module.exports = require('./webpack/production');
   break;
 
 default:
-  module.exports = require('./config/webpack.dev');
+  module.exports = require('./webpack/development');
   break;
 }

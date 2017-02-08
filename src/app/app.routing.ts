@@ -1,28 +1,22 @@
-/*===============================
-=            MODULES            =
-===============================*/
+// ────────────────────────────────────────────────────────────────────────────────
+// MODULES
 
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from './home';
+// ────────────────────────────────────────────────────────────────────────────────
 
-/*=====  End of MODULES  ======*/
-
-
-/*==============================
-=            ROUTES            =
-==============================*/
+// ────────────────────────────────────────────────────────────────────────────────
+// ROUTES
 
 const appRoutes: Routes = [
-  { component: HomeComponent, path: '' },
-  { component: HomeComponent, path: 'home' }
+  // { component: SomeComponent, path: '' },
 ];
 
 export const RoutingProviders: any[] = [
-
+  // bootstrap providers
 ];
 
 export const RoutingModule = RouterModule.forRoot(appRoutes);
 
-/*=====  End of ROUTES  ======*/
+// ────────────────────────────────────────────────────────────────────────────────
 
