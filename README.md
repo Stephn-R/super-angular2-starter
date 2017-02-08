@@ -15,11 +15,5 @@ npm install
 2. Run the app in development mode
 
 ```sh
-npm run server
-```
-
-3. Run the app in production mode
-
-```sh
 npm start
 ```
