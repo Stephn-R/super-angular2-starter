@@ -18,7 +18,6 @@
   },
   "exclude": [
     "bin",
-    "config",
     "node_modules"
   ],
   "compileOnSave": false,
@@ -26,7 +25,4 @@
   "typeRoots": [
     "../node_modules/@types"
   ]
-  // "types": [
-  //   "core-js"
-  // ]
 }

@@ -1,22 +1,22 @@
 // ────────────────────────────────────────────────────────────────────────────────
 // MODULES
 
-import { Routes, RouterModule } from '@angular/router';
+import { Injectable } from '@angular/core';
+import { Action } from 'redux';
 
 // ────────────────────────────────────────────────────────────────────────────────
 
+@Injectable()
+export class HomeActions {
+  static readonly SAY_HELLO = 'SAY_HELLO(HOME)';
+  static readonly LOAD_FAILED = 'LOAD_FAILED(HOME)';
+
+  sayHello(payload) {
+    return {
+      type: HomeActions.SAY_HELLO,
+      payload,
+    };
+  }
+}
+
 // ────────────────────────────────────────────────────────────────────────────────
-// ROUTES
-
-const appRoutes: Routes = [
-  // { component: SomeComponent, path: '' },
-];
-
-export const RoutingProviders: any[] = [
-  // bootstrap providers
-];
-
-export const RoutingModule = RouterModule.forRoot(appRoutes);
-
-// ────────────────────────────────────────────────────────────────────────────────
-

@@ -20,10 +20,13 @@ module.exports = merge(common, {
       alwaysNotify: true,
     }),
   ],
+  stats: {
+    warnings: false
+  },
   devServer: {
-    contentBase: path.join(__dirname, '..', 'bin'),
+    contentBase: path.resolve(__dirname, '..', 'bin'),
+    historyApiFallback: true,
     compress: true,
-    port: 8000,
-    watchContentBase: true
+    port: 9000
   }
 });

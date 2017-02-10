@@ -1,24 +1,19 @@
 // ────────────────────────────────────────────────────────────────────────────────
 // MODULES
 
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
+import { select } from '@angular-redux/store';
+
+const template = require('./home.html');
 
 // ────────────────────────────────────────────────────────────────────────────────
 
 // ────────────────────────────────────────────────────────────────────────────────
-// APP COMPONENT
+// COMPONENT
 
 @Component({
-  // Use Shadow DOM encapsulation
-  encapsulation: ViewEncapsulation.Native,
-  selector: 'app',
-  template: `
-    <h1>Welcome to Super Angular 2 Webpack Starter</h1>
-    <router-outlet></router-outlet>
-  `
+  template
 })
-export class AppComponent {
-  constructor() {}
-}
+export class HomeComponent {}
 
-/*=====  End of APP COMPONENT  ======*/
+// ────────────────────────────────────────────────────────────────────────────────

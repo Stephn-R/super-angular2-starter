@@ -1,3 +1,9 @@
+# 2.1.0
+
+- add redux support
+- hot reloading
+- modularized angular components
+
 # 2.0.0
 
 - updating application dependencies and move to TS 2.0+

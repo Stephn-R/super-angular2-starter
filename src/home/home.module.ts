@@ -1,36 +1,22 @@
 // ────────────────────────────────────────────────────────────────────────────────
 // MODULES
 
-import { NgModule }       from '@angular/core';
-import { BrowserModule  } from '@angular/platform-browser';
+import { NgModule } from '@angular/core'
+import { CommonModule } from '@angular/common';
 
-import { AppComponent }   from './app.component';
-import { RoutingModule, RoutingProviders } from './app.routing';
+import { HomeComponent } from './home.component';
+import { HomeService } from './home.service';
+import { HomeActions } from './home.actions';
 
 // ────────────────────────────────────────────────────────────────────────────────
-// APP MODULE
 
 @NgModule({
-  bootstrap: [
-    AppComponent
-  ],
-
-  declarations: [
-    AppComponent
-  ],
-
-  imports: [
-    BrowserModule,
-    RoutingModule
-  ],
-
+  declarations: [ HomeComponent ],
   providers: [
-    RoutingProviders
-  ]
+    HomeService,
+    HomeActions,
+  ],
+  imports: [ CommonModule ],
+  exports: [ HomeComponent ],
 })
-export class AppModule {
-  constructor() {}
-}
-
-/*=====  End of APP MODULE  ======*/
-
+export class HomeModule {}

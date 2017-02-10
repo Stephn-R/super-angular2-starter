@@ -13,14 +13,16 @@ if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'dev') {
   require('dotenv').config();
 }
 
+const PROD = (process.env.NODE_ENV === 'production');
+
 module.exports = {
   entry:          {
-    main:      [ './src/app/main.browser.ts' ],
-    polyfills: [ './src/app/polyfills.browser.ts' ],
-    vendors:    [ './src/app/vendors.browser.ts' ]
+    main:      [ './src/main.browser.ts' ],
+    polyfills: [ './src/polyfills.browser.ts' ],
+    vendors:    [ './src/vendors.browser.ts' ]
   },
   output: {
-    path:       path.resolve(__dirname, '..', 'bin'),
+    path: path.resolve(__dirname, '..', 'bin'),
     filename: '[name].bundle.js',
     sourceMapFilename: '[name].map'
   },
@@ -33,14 +35,14 @@ module.exports = {
       {
         test: /\.ts$/,
         use: [
-          'ts-loader',
+          'awesome-typescript-loader',
         ],
         exclude: /(node_modules)/,
       },
       {
         test: /\.(sass|scss)$/,
         use: [
-          'style-loader',
+          'css-to-string-loader',
           'css-loader?sourceMap',
           'postcss-loader',
           'sass-loader?sourceMap',
@@ -62,7 +64,7 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      ENV: JSON.stringify(process.env.NODE_ENV),
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
     }),
     new HtmlWebpackPlugin({
       showError:      true,
@@ -73,5 +75,10 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       names: ['polyfills', 'vendors'].reverse(),
     }),
+    // HOT FIX FOR WEIRD WARNINGS ON DEV SERVER
+    new webpack.ContextReplacementPlugin(
+      /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+      __dirname
+    ),
   ]
 };
