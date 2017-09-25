@@ -13,7 +13,7 @@ import {
   createStore
 } from 'redux';
 import { createEpicMiddleware, combineEpics } from 'redux-observable';
-import * as createLogger from 'redux-logger';
+import { createLogger } from 'redux-logger';
 
 import { homeReducer } from '../home';
 import { AppActions } from './app.actions';

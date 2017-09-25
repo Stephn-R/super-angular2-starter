@@ -8,7 +8,7 @@ import { ApplicationRef, NgModule } from '@angular/core';
 import { NgReduxModule, NgRedux } from '@angular-redux/store';
 import { NgReduxRouterModule } from '@angular-redux/router';
 
-import * as createLogger from 'redux-logger';
+import { createLogger } from 'redux-logger';
 
 import { AppComponent }   from './app.component';
 import { RoutingModule } from './app.routing';
